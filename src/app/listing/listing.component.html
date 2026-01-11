@@ -1,0 +1,32 @@
+<div class="card-box">
+    <div class="row">
+        <div class="col-sm-4">
+            <a routerLink="create" class="btn btn-success">Add New Customer</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>UserId</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customerdata of customersdata">
+                    <td>{{customerdata.userId}}</td>
+                    <td>{{customerdata.id}}</td>
+                    <td>{{customerdata.title}}</td>
+                    <td>{{customerdata.body}}</td>
+                    <td><button routerLink="edit/{{customerdata.id}}" class="btn btn-primary">Edit</button>  <button class="btn btn-danger" (click)="deletecustomer(customerdata.id)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

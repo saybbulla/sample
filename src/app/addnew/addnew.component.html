@@ -1,0 +1,36 @@
+<div class="card-box">
+    <h2>Add New Customer</h2>
+    <form [formGroup]="register" (ngSubmit)="savecustomer()">
+        <div class="form-group">
+            <label for="userId">User ID:</label>
+            <input type="number" class="form-control" id="userId" placeholder="Enter User ID" formControlName="userid">
+        </div>
+        <div *ngIf="register.get('userid')?.invalid && register.get('userid')?.touched">
+            <div class="text-danger">User ID is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="id">ID:</label>
+            <input type="number" class="form-control" id="id" placeholder="Enter ID" formControlName="id">
+        </div>
+        <div *ngIf="register.get('id')?.invalid && register.get('id')?.touched">
+            <div class="text-danger">ID is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter Title" formControlName="title">
+        </div>
+        <div *ngIf="register.get('id')?.invalid && register.get('id')?.touched">
+            <div class="text-danger">ID is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="body">Body:</label>
+            <textarea class="form-control" id="body" placeholder="Enter Body" formControlName="body"></textarea>
+        </div>
+        <div *ngIf="register.get('body')?.invalid && register.get('body')?.touched">
+            <div class="text-danger">Body is required.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="col-lg-3">
+            <br>
+            <span class="{{messageclass}}">{{message}}</span>
+        </div>

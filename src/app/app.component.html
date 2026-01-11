@@ -1,4 +1,17 @@
 <div class="header">
-  <a class="menulink">Home</a>
-  <a class="menulink">Customer</a>
+  <a class="menulink" routerLink="home">Home</a>
+  <a class="menulink" routerLink="customer">Customer</a>
 </div>
+
+
+<app-newpage></app-newpage>
+<app-dashboard></app-dashboard>
+
+<div class="container-fluid">
+  <div class="card-box">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+
